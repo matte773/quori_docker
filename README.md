@@ -7,7 +7,7 @@ Follow the instructions at https://github.com/matte773/ros-humble-ros1-bridge-bu
 
 
 # Pre-Built Docker Image
-A pre-built docker image can be downloaded from the link below:
+A pre-built docker image can be downloaded from here:
 https://drive.google.com/file/d/16CVyFcgHzu82O-MV3zf_bfDrsMiM_I4O/view?usp=drive_link
 
 
