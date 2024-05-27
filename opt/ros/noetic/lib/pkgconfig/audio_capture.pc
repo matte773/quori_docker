@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: audio_capture
+Description: Description of audio_capture
+Version: 0.3.17
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

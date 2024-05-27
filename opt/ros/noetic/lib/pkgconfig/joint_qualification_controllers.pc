@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: joint_qualification_controllers
+Description: Description of joint_qualification_controllers
+Version: 1.0.15
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ljoint_qualification_controllers
+Requires: message_runtime pr2_controller_interface pr2_mechanism_model pr2_hardware_interface control_toolbox roscpp robot_mechanism_controllers pluginlib std_msgs sensor_msgs realtime_tools urdf

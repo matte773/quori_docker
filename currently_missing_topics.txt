@@ -1,0 +1,158 @@
+These topics are currently missing when running the quori_docker image and a ROS Bridge in ROS Humble 
+The next step is to look if theres a way to include the missing topics into a custom msg that can be added to the ROS Bridge
+See the bottom section of the README in the ros-bridge-builder for an example
+
+
+root@quori6-NUC8i7HVK:~# rostopic info /quori/base/cmd_diff 
+Type: geometry_msgs/Vector3
+
+Publishers: None
+
+Subscribers: 
+ * /base_serial_node (http://10.214.154.192:38171/)
+
+XXX
+--------------------------------------------------------------------------------
+
+/quori/base/set_M1Gains 
+Type: geometry_msgs/Vector3
+
+Publishers: None
+
+Subscribers: 
+ * /base_serial_node (http://10.214.154.192:38171/) 
+
+XXX
+--------------------------------------------------------------------------------
+
+/quori/base/set_M2Gains 
+Type: geometry_msgs/Vector3
+
+Publishers: None
+
+Subscribers: 
+ * /base_serial_node (http://10.214.154.192:38171/)
+ 
+ 
+XXX
+--------------------------------------------------------------------------------
+
+/quori/base/set_MTGains 
+Type: geometry_msgs/Vector3
+
+Publishers: None
+
+Subscribers: 
+ * /base_serial_node (http://10.214.154.192:38171/)
+ 
+ 
+XXX
+--------------------------------------------------------------------------------
+
+/quori/base_controller/cmd_vel
+Type: geometry_msgs/Twist
+
+Publishers: None
+
+Subscribers: 
+ * /quori/quori_controller (http://10.214.154.192:44467/)
+
+XXX
+--------------------------------------------------------------------------------
+
+/quori/joint_trajectory_controller/command
+Type: trajectory_msgs/JointTrajectory
+
+Publishers: None
+
+Subscribers: 
+ * /quori/quori_controller (http://10.214.154.192:32869/)
+ 
+ 
+ XXX 
+--------------------------------------------------------------------------------
+
+quori/joint_trajectory_controller/follow_joint_trajectory/cancel
+Type: actionlib_msgs/GoalID
+
+Publishers: None
+
+Subscribers: 
+ * /quori/quori_controller (http://10.214.154.192:44467/)
+ 
+
+MISSING
+ --------------------------------------------------------------------------------
+ 
+/quori/joint_trajectory_controller/follow_joint_trajectory/feedback 
+Type: control_msgs/FollowJointTrajectoryActionFeedback
+
+Publishers: 
+ * /quori/quori_controller (http://10.214.154.192:44467/)
+
+Subscribers: None
+ 
+
+MISSING 
+--------------------------------------------------------------------------------
+
+/quori/joint_trajectory_controller/follow_joint_trajectory/goal
+Type: control_msgs/FollowJointTrajectoryActionGoal
+
+Publishers: None
+
+Subscribers: 
+ * /quori/quori_controller (http://10.214.154.192:44467/)
+ 
+ 
+MISSING 
+--------------------------------------------------------------------------------
+
+/quori/joint_trajectory_controller/follow_joint_trajectory/result 
+Type: control_msgs/FollowJointTrajectoryActionResult
+
+Publishers: 
+ * /quori/quori_controller (http://10.214.154.192:44467/)
+
+Subscribers: None
+
+
+MISSING
+--------------------------------------------------------------------------------
+
+/quori/joint_trajectory_controller/follow_joint_trajectory/result 
+Type: control_msgs/FollowJointTrajectoryActionResult
+
+Publishers: 
+ * /quori/quori_controller (http://10.214.154.192:44467/)
+
+Subscribers: None
+
+
+MISSING
+--------------------------------------------------------------------------------
+
+/quori/joint_trajectory_controller/state
+Type: control_msgs/JointTrajectoryControllerState
+
+Publishers: 
+ * /quori/quori_controller (http://10.214.154.192:44467/)
+
+Subscribers: None
+
+
+MISSING
+--------------------------------------------------------------------------------
+
+/rosout_agg
+Type: rosgraph_msgs/Log
+
+Publishers: 
+ * /rosout (http://10.214.154.192:36969/)
+
+
+Subscribers: None
+
+
+ MISSING
+--------------------------------------------------------------------------------

@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: joint_trajectory_generator
+Description: Description of joint_trajectory_generator
+Version: 0.0.12
+Cflags: -I${prefix}/include -I/usr/include -I/usr/share/orocos_kdl/cmake/../../../include -I/usr/include/eigen3
+Libs: -L${prefix}/lib -ljoint_trajectory_generation /usr/lib/x86_64-linux-gnu/libboost_thread.so.1.71.0 -lorocos-kdl
+Requires: roscpp urdf angles actionlib joint_trajectory_action pr2_controllers_msgs

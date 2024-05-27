@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: speech_recognition_msgs
+Description: Description of speech_recognition_msgs
+Version: 4.3.2
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: std_msgs message_runtime

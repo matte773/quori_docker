@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: joint_trajectory_action_tools
+Description: Description of joint_trajectory_action_tools
+Version: 0.0.12
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: trajectory_msgs pr2_controllers_msgs

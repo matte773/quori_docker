@@ -1,0 +1,15 @@
+Metadata-Version: 1.1
+Name: joint_trajectory_action_tools
+Version: 0.0.12
+Summary: joint_trajectory_action_tools
+Home-page: http://ros.org/wiki/joint_trajectory_action_tools
+Author: ROS Orphaned Package Maintainers
+Author-email: ros-orphaned-packages@googlegroups.com
+License: BSD
+Description: UNKNOWN
+Platform: UNKNOWN
+Requires: roslib
+Requires: rospy
+Requires: joint_trajectory_action
+Requires: trajectory_msgs
+Requires: pr2_controllers_msgs

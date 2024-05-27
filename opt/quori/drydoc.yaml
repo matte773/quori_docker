@@ -1,0 +1,14 @@
+---
+decl:
+  type: unit
+  id: home
+  name: quori_ros
+  rule:
+    name: copy
+    params:
+      path: README.md
+      name: quori_ros
+  children:
+    -
+      type: import
+      uri: src/drydoc.yaml

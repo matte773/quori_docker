@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: audio_play
+Description: Description of audio_play
+Version: 0.3.17
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

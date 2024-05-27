@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: joint_states_settler
+Description: Description of joint_states_settler
+Version: 0.10.15
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib -ljoint_states_settler
+Requires: actionlib actionlib_msgs rosconsole roscpp roscpp_serialization settlerlib std_msgs

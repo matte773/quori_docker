@@ -1,0 +1,21 @@
+---
+decl:
+  type: unit
+  id: quori_holonomic_drive_controller
+  name: "Quori Holonomic Drive Controller"
+  rule:
+    name: copy
+    params:
+      path: readme.md
+      name: quori_holonomic_drive_controller
+  children:
+    -
+      type: unit
+      id: quori_holonomic_drive_controller_api
+      name: "API"
+      rule:
+        name: clang
+        params:
+          path: include
+          name: "C++ API"
+          arguments: "-I/opt/ros/kinetic/include"

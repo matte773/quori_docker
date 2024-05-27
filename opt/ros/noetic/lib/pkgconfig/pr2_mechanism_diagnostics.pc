@@ -1,0 +1,8 @@
+prefix=/opt/ros/noetic
+
+Name: pr2_mechanism_diagnostics
+Description: Description of pr2_mechanism_diagnostics
+Version: 1.8.21
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
