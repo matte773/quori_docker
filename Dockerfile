@@ -34,6 +34,8 @@ RUN apt-get install -y python3-tk
 # Install catkin tools
 RUN apt-get install -y ros-noetic-catkin
 
+RUN apt-get install -y git 
+
 # Uncomment the following lines to install the necessary ROS packages for Gazebo if simulation is missing
 # RUN apt-get install curl 
 # RUN curl -sSL http://get.gazebosim.org | sh
@@ -48,12 +50,22 @@ RUN apt-get install -y ros-noetic-catkin
 RUN pip3 install pyusb speechrecognition pyaudio pixel_ring pyserial
 
 # Copy your ROS workspaces into the Docker image
-COPY /opt/quori /opt/quori/
 COPY /opt/quori_embedded /opt/quori_embedded/
 COPY /opt/arduino-1.8.16 /opt/arduino-1.8.16/
 COPY /opt/AstraSDK-v2.1.1-24f74b8b15-20200426T014025Z-Ubuntu18.04-x86_64 /opt/AstraSDK-v2.1.1-24f74b8b15-20200426T014025Z-Ubuntu18.04-x86_64/
 COPY /opt/ros /opt/ros/
 COPY /opt/usb_4_mic_array /opt/usb_4_mic_array/
+
+# Set up SSH for cloning private repositories
+ARG SSH_PRIVATE_KEY
+RUN mkdir /root/.ssh && chmod 700 /root/.ssh && \
+    echo "${SSH_PRIVATE_KEY}" > /root/.ssh/id_ed25519 && \
+    chmod 600 /root/.ssh/id_ed25519 && \
+    echo "StrictHostKeyChecking no" > /root/.ssh/config && \
+    ssh-keyscan github.com >> /root/.ssh/known_hosts
+
+# Clone your repository
+RUN git clone git@github.com:matte773/quori_ros.git /opt/quori
 
 # Set the working directory to your catkin workspace
 WORKDIR /opt/quori
@@ -67,9 +79,9 @@ RUN echo "source /opt/quori/devel/setup.bash" >> ~/.bashrc
 
 # Set the ROS_MASTER_URI environment variable
 # Change these IP's so that the 
-ENV ROS_MASTER_URI=http://[Quori IP]:11311 
+ENV ROS_MASTER_URI=quori:11311 
 
-ENV ROS_IP=[GUI Machine IP]
+ENV ROS_IP=robotics-ip
 
 # Set the working directory
 WORKDIR /root
@@ -79,3 +91,4 @@ ENV DISPLAY=:0
 
 # Set the entrypoint to bash
 ENTRYPOINT ["/bin/bash"]
+
