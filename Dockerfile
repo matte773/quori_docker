@@ -28,6 +28,12 @@ RUN apt-get install -y libglew-dev
 # Install net-tools for ifconfig
 RUN apt-get install net-tools
 
+# Install tkinter for Python 3
+RUN apt-get install -y python3-tk
+
+# Install catkin tools
+RUN apt-get install -y ros-noetic-catkin
+
 # Uncomment the following lines to install the necessary ROS packages for Gazebo if simulation is missing
 # RUN apt-get install curl 
 # RUN curl -sSL http://get.gazebosim.org | sh
@@ -49,16 +55,21 @@ COPY /opt/AstraSDK-v2.1.1-24f74b8b15-20200426T014025Z-Ubuntu18.04-x86_64 /opt/As
 COPY /opt/ros /opt/ros/
 COPY /opt/usb_4_mic_array /opt/usb_4_mic_array/
 
+# Set the working directory to your catkin workspace
+WORKDIR /opt/quori
+
+# Build the catkin workspace
+RUN /bin/bash -c "source /opt/ros/noetic/setup.bash && catkin_make"
+
 # Source the ROS setup script
 RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 RUN echo "source /opt/quori/devel/setup.bash" >> ~/.bashrc
 
 # Set the ROS_MASTER_URI environment variable
 # Change these IP's so that the 
-# ENV ROS_MASTER_URI=http://[Quori's Wifi IP Address]:11311 
-#and
-# ENV ROS_IP=[Quori's Wifi IP Address]
+ENV ROS_MASTER_URI=http://10.214.154.192:11311 
 
+ENV ROS_IP=10.214.154.198
 
 # Set the working directory
 WORKDIR /root
