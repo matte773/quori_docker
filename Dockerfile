@@ -67,9 +67,9 @@ RUN echo "source /opt/quori/devel/setup.bash" >> ~/.bashrc
 
 # Set the ROS_MASTER_URI environment variable
 # Change these IP's so that the 
-ENV ROS_MASTER_URI=http://10.214.154.192:11311 
+ENV ROS_MASTER_URI=http://[Quori IP]:11311 
 
-ENV ROS_IP=10.214.154.198
+ENV ROS_IP=[GUI Machine IP]
 
 # Set the working directory
 WORKDIR /root
