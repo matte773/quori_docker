@@ -1,7 +1,0 @@
-devices:
-  default:
-    # uri: device/default
-    color: true
-    depth: true
-    # ir: true
-    
