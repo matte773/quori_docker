@@ -78,10 +78,15 @@ RUN echo "source /opt/ros/noetic/setup.bash" >> ~/.bashrc
 RUN echo "source /opt/quori/devel/setup.bash" >> ~/.bashrc
 
 # Set the ROS_MASTER_URI environment variable
+# Keep IP addresses in a local robot_ip.txt and gui_ip.txt file) 
 # Change these IP's so that the 
-ENV ROS_MASTER_URI=quori:11311 
+ARG ROBOT_IP
+ARG GUI_IP
+ENV ROS_MASTER_URI=${ROBOT_IP}:11311 
+ENV ROS_IP=${GUI_IP}
 
-ENV ROS_IP=robotics-ip
+RUN echo "ROS_MASTER_URI: $ROS_MASTER_URI"
+RUN echo "ROS_IP: $ROBOT_IP"
 
 # Set the working directory
 WORKDIR /root
