@@ -82,7 +82,7 @@ RUN echo "source /opt/quori/devel/setup.bash" >> ~/.bashrc
 # Change these IP's so that the 
 ARG ROBOT_IP
 ARG GUI_IP
-ENV ROS_MASTER_URI=${ROBOT_IP}:11311 
+ENV ROS_MASTER_URI=http://${ROBOT_IP}:11311 
 ENV ROS_IP=${GUI_IP}
 
 RUN echo "ROS_MASTER_URI: $ROS_MASTER_URI"
