@@ -45,3 +45,9 @@ sudo docker exec -it [CONTAINER ID] bash
 ```
 ros2 run ros1_bridge dynamic_bridge --bridge-all-topics
 ```
+
+## Notes
+If youre encountering a '_tkinter.TclError: couldn't connect to display ":0"' then before running the ./build_run.sh run the following command on the host system:
+```
+xhost +local:
+```
